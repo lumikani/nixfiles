@@ -4,7 +4,6 @@
     vim
     wget   
     firefox
-    git 
     btop
     networkmanagerapplet
     nix-prefetch-scripts

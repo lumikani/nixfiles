@@ -65,8 +65,13 @@ in
     extraGroups = [ "wheel" "video" "audio" "disk" "networkmanager" "docker" ];
     group = "users";
     home = "/home/" + login;
+    shell = pkgs.zsh;
     initialPassword = "cats1234";
   };
+
+  home-manager.users."${login}" = import ./home/home.nix;
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
 
   virtualisation = {
     docker.enable = true;
