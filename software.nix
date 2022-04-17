@@ -22,6 +22,7 @@
     anki  
     docker
     transmission
+    ripgrep
   ];
 }
 

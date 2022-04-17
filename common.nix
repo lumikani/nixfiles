@@ -69,6 +69,12 @@ in
     initialPassword = "cats1234";
   };
 
+  fonts.fonts = with pkgs; [
+    roboto liberation_ttf dejavu_fonts
+
+    (nerdfonts.override { fonts = [ "Iosevka" ]; })
+  ];
+
   home-manager.users."${login}" = import ./home/home.nix;
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
