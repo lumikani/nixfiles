@@ -2,6 +2,8 @@
 {
   imports = [
     ./zsh/zsh.nix
+    ./alacritty.nix
+    ./i3.nix
   ];
 
   programs = {

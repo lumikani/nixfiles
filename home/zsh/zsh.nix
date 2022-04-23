@@ -9,6 +9,10 @@
       sessionVariables = {
         EDITOR = "nvim";
       };
+
+      shellAliases = {
+        update = "sudo nixos-rebuild switch --flake .#";
+      };
       
       plugins = [
         {
