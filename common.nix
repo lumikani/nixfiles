@@ -29,6 +29,10 @@ in
   # Configure X11, xfce and i3
   services.xserver = {
     enable = true;
+
+    autoRepeatDelay = 190;
+    autoRepeatInterval = 25;
+
     layout = "us";
     xkbVariant = "altgr-intl";
     desktopManager = {
