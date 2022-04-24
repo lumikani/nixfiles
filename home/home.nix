@@ -5,6 +5,7 @@
     ./alacritty.nix
     ./i3.nix
     ./firefox.nix
+    ./nvim.nix
   ];
 
   programs = {
