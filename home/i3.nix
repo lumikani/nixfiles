@@ -89,6 +89,7 @@ in
         "${modifier}+Shift+j" = "move down";
         "${modifier}+Shift+k" = "move up";
         "${modifier}+Shift+l" = "move right";
+        "${modifier}+Escape" = "exec ${lock_system}";
         "${modifier}+Shift+e" = "exec 'i3-nagbar -t warning -m \'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.\' -B \'Yes, exit i3\' \'xfce4-session-logout\'";
         "${modifier}+Shift+b" = "mode \"${mode_system}\"";
       };
