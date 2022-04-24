@@ -1,5 +1,21 @@
-{ pkgs, ... }:
-
+{ pkgs, lib, ... }:
+let
+  customPlugins = {
+    winresizer = pkgs.vimUtils.buildVimPlugin {
+      name = "winresizer";
+      src = pkgs.fetchgit {
+        url = "https://github.com/simeji/winresizer";
+        rev = "9dc9899cedf84d78b93263b1fdb105b37c54c7b5";
+        sha256 = "hT0eaOTUk3F2U8iBNv5hLbNPeyWK2mltZxK87laR21A=";
+      };
+      meta = {
+        homepage = "https://github.com/simeji/winresizer";
+        maintainers = [ "simeji" ];
+      };
+    };
+  };
+  allPlugins = pkgs.vimPlugins // customPlugins;
+in
 {
   home.packages = with pkgs; [
     xclip
@@ -24,11 +40,12 @@
         nnoremap <leader>n :NvimTreeFindFile<CR>
       '';
 
-    plugins = with pkgs.vimPlugins; [
+    plugins = with allPlugins; [
       vim-nix
       editorconfig-nvim
       plenary-nvim
       nvim-web-devicons
+      winresizer
 
       # Plugins with custom config
       {
