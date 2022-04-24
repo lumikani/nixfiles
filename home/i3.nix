@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 let
   mode_system = "(l)ock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown";
-  lock_system = "i3lock && sleep 1";
+  lock_system = "i3lock -c 000000 && sleep 1";
 in
 {
   xsession.windowManager.i3 = {
