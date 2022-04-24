@@ -17,8 +17,8 @@
       system = "x86_64-linux";
       modules = [ 
         ./hosts/muffin/configuration.nix
-	{ nixpkgs.overlays = [ nur.overlay ]; }
-	home-manager.nixosModules.home-manager
+        { nixpkgs.overlays = [ nur.overlay ]; }
+        home-manager.nixosModules.home-manager
       ];
     };
   };

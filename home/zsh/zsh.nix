@@ -16,10 +16,10 @@
       
       plugins = [
         {
-	  name = "powerlevel10k-config";
-	  src = lib.cleanSource ./.;
-	  file = "p10k-config.zsh";
-	}
+          name = "powerlevel10k-config";
+          src = lib.cleanSource ./.;
+          file = "p10k-config.zsh";
+        }
       ];
       
       zplug = {
