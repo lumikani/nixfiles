@@ -3,6 +3,8 @@ let
   mode_system = "(l)ock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown";
   lock_system = "i3lock -c 000000 && sleep 1";
   i3status-bottom = "bottom";
+  rofi-package = pkgs.rofi.override { plugins = [ pkgs.rofi-emoji ]; };
+  rofi-menu = "${rofi-package}/bin/rofi -show";
 in
 {
   xsession.windowManager.i3 = {
@@ -92,13 +94,29 @@ in
         "${modifier}+Escape" = "exec ${lock_system}";
         "${modifier}+Shift+e" = "exec 'i3-nagbar -t warning -m \'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.\' -B \'Yes, exit i3\' \'xfce4-session-logout\'";
         "${modifier}+Shift+b" = "mode \"${mode_system}\"";
+        "${modifier}+space" = "exec ${rofi-menu} run";
+        "Ctrl+space" = "exec ${rofi-menu} window";
+        "${modifier}+period" = "exec ${rofi-menu} emoji";
       };
+
+      menu = "${rofi-menu} run";
 
       modifier = "Mod4";
       
       terminal = "alacritty";
 
       workspaceAutoBackAndForth = true;
+    };
+  };
+
+  programs.rofi = {
+    enable = true;
+    theme = "Arc-Dark";
+
+    package = rofi-package;
+
+    extraConfig = {
+        modi = "run,emoji,window";
     };
   };
 
