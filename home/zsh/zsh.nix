@@ -7,6 +7,9 @@
   programs = {
     zoxide = {
       enable = true;
+      options = [
+        "--cmd j"
+      ];
     };
 
     zsh = {
@@ -40,7 +43,7 @@
             owner = "larkery";
             repo = "zsh-histdb";
             rev = "30797f0c50c31c8d8de32386970c5d480e5ab35d";
-            sha256 = lib.fakeSha256;
+            sha256 = "sha256-PQIFF8kz+baqmZWiSr+wc4EleZ/KD8Y+lxW2NT35/bg=";
           };
         }
       ];
