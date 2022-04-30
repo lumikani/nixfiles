@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 let
   exa_options_base = "--icons --git --time-style=long-iso -l";
-  zsh_histdb_interactive = "\$HOME/.config/zsh/plugins/zsh-histdb/histdb-interactive.zsh";
+  zsh_histdb_interactive = "$HOME/.config/zsh/plugins/zsh-histdb/histdb-interactive.zsh";
 in
 { 
   home.packages = with pkgs; [
@@ -39,9 +39,9 @@ in
               select commands.argv from history
               left join commands on history.command_id = commands.rowid
               left join places on history.place_id = places.rowid
-              where commands.argv LIKE '\$(sql_escape \$1)%'
+              where commands.argv LIKE '$(sql_escape $1)%'
               group by commands.argv, places.dir
-              order by places.dir != '\$(sql_escape \$PWD)', count(*) desc
+              order by places.dir != '$(sql_escape $PWD)', count(*) desc
               limit 1
             "
               suggestion=$(_histdb_query "$query")
@@ -86,7 +86,7 @@ in
         gsw = "git switch";
         gd = "git diff";
         gl = "git log";
-        gpsup = "git push --set-upstream origin \$(git_current_branch)";
+        gpsup = "git push --set-upstream origin $(git_current_branch)";
         grb = "git rebase";
         grba = "git rebase --abort";
         grbc = "git rebase --continue";
