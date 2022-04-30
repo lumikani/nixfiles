@@ -41,6 +41,22 @@ in
         ll = "exa ${exa_options_base}";
         la = "exa ${exa_options_base} -a";
         lt = "exa ${exa_options_base} -T --level 2";
+
+        # git aliases;
+        ga = "git add";
+        gc = "git commit";
+        gcm = "git commit --amend";
+        gcp = "git cherry-pick";
+        gp = "git push";
+        gs = "git status";
+        gsw = "git switch";
+        gd = "git diff";
+        gl = "git log";
+        gpsup = "git push --set-upstream origin \$(git_current_branch)";
+        grb = "git rebase";
+        grba = "git rebase --abort";
+        grbc = "git rebase --continue";
+        grbi = "git rebase --interactive";
       };
       
       plugins = [
