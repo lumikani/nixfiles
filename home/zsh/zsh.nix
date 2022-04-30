@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }:
 let
   exa_options_base = "--icons --git --time-style=long-iso -l";
+  zsh_histdb_interactive = "\$HOME/.config/zsh/plugins/zsh-histdb/histdb-interactive.zsh";
 in
 { 
   home.packages = with pkgs; [
@@ -21,6 +22,10 @@ in
 
     zsh = {
       enable = true;
+
+      enableAutosuggestions = true;
+      enableSyntaxHighlighting = true;
+
       dotDir = ".config/zsh"; 
       defaultKeymap = "viins";
 
@@ -28,10 +33,39 @@ in
         ''
           # zsh-histdb
           autoload -Uz add-zsh-hook
+
+          _zsh_autosuggest_strategy_histdb_top() {
+            local query="
+              select commands.argv from history
+              left join commands on history.command_id = commands.rowid
+              left join places on history.place_id = places.rowid
+              where commands.argv LIKE '\$(sql_escape \$1)%'
+              group by commands.argv, places.dir
+              order by places.dir != '\$(sql_escape \$PWD)', count(*) desc
+              limit 1
+            "
+              suggestion=$(_histdb_query "$query")
+          }
+
+          ZSH_AUTOSUGGEST_STRATEGY=histdb_top
+
+          if [[ -f ${zsh_histdb_interactive} ]]; then
+            source ${zsh_histdb_interactive}
+            bindkey "^r" _histdb-isearch
+          fi
+
+          bindkey -v
+          bindkey "^?" backward-delete-char
+
+          # does not work in session variables for some reason
+          export ZSH_HIGHLIGHT_STYLES[path]=none;
         '';
 
       sessionVariables = {
         EDITOR = "nvim";
+        KEYTIMEOUT = "2";
+        FZF_DEFAULT_COMMAND = "rg --files --hidden";
+        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=#595959";
       };
 
       shellAliases = {
