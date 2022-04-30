@@ -54,6 +54,14 @@ in
     };
   };
 
+  services = {
+    gnome.gnome-keyring.enable = true;
+  };
+
+  security.pam = {
+    services.lightdm.enableGnomeKeyring = true;
+  };
+
   # Enable sound.   
   nixpkgs.config = {  
     pulseaudio = true; 

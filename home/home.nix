@@ -20,8 +20,13 @@
     tig
   ];
 
-  home.file.".tigrc".text =
-    ''
+  home.file = {
+    ".xprofile".text = ''
+      eval $(/run/wrappers/bin/gnome-keyring-daemon --start --daemonize)
+      export SSH_AUTH_SOCK
+    '';
+
+    ".tigrc".text = ''
       set git-colors = no
       # Override the default terminal colors to white on black.
       # color default         white   black
@@ -43,6 +48,7 @@
       set main-view = author:yes date:no id:yes commit-title:yes
       bind generic 9 @sh -c "printf '%s' %(commit) | xclip -selection c"
     '';
+  };
 
   home.stateVersion = "21.11";
 }
