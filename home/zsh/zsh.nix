@@ -29,7 +29,7 @@ in
           # zsh-histdb
           autoload -Uz add-zsh-hook
         '';
-      
+
       sessionVariables = {
         EDITOR = "nvim";
       };
