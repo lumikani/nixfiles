@@ -1,4 +1,7 @@
 { config, pkgs, lib, ... }:
+let
+  exa_options_base = "--icons --git --time-style=long-iso -l";
+in
 { 
   home.packages = with pkgs; [
     sqlite
@@ -10,6 +13,10 @@
       options = [
         "--cmd j"
       ];
+    };
+
+    exa = {
+      enable = true;
     };
 
     zsh = {
@@ -29,6 +36,11 @@
 
       shellAliases = {
         update = "sudo nixos-rebuild switch --flake .#";
+
+        # exa aliases
+        ll = "exa ${exa_options_base}";
+        la = "exa ${exa_options_base} -a";
+        lt = "exa ${exa_options_base} -T --level 2";
       };
       
       plugins = [
