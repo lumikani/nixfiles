@@ -72,6 +72,7 @@ in
         update = "sudo nixos-rebuild switch --flake .#";
 
         # exa aliases
+        l = "exa ${exa_options_base}";
         ll = "exa ${exa_options_base}";
         la = "exa ${exa_options_base} -a";
         lt = "exa ${exa_options_base} -T --level 2";
