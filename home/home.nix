@@ -18,6 +18,7 @@
 
   home.packages = with pkgs; [
     tig
+    slack
   ];
 
   home.file = {
