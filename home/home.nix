@@ -19,6 +19,7 @@
   home.packages = with pkgs; [
     tig
     slack
+    dbeaver
   ];
 
   home.file = {
