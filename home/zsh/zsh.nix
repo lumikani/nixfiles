@@ -69,7 +69,7 @@ in
       };
 
       shellAliases = {
-        update = "sudo nixos-rebuild switch --flake .#";
+        update = "nixos-rebuild switch --use-remote-sudo --flake .#";
 
         # exa aliases
         l = "exa ${exa_options_base}";
