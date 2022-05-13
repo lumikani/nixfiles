@@ -20,6 +20,7 @@
     tig
     slack
     dbeaver
+    protonvpn-cli
   ];
 
   home.file = {
