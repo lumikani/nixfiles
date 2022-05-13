@@ -56,7 +56,7 @@ in
           l = "exec --no-startup-id ${lock_system}, mode \"default\"";
           e = "exec --no-startup-id xfce4-session-logout, mode \"default\"";
           s = "exec --no-startup-id ${lock_system} && systemctl suspend, mode \"default\"";
-          h = "exec --no-startup-id ${lock_system} && systemctl suspend, mode \"default\"";
+          h = "exec --no-startup-id ${lock_system} && systemctl hibernate, mode \"default\"";
           r = "exec --no-startup-id systemctl reboot, mode \"default\"";
           "Shift+s" = "exec --no-startup-id systemctl reboot, mode \"default\"";
           Return = "mode \"default\"";
