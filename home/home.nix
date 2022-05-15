@@ -21,6 +21,7 @@
     slack
     dbeaver
     protonvpn-cli
+    git-filter-repo
   ];
 
   home.file = {
