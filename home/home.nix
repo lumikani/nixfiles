@@ -12,7 +12,7 @@
     git = {
       enable = true;
       userName = "Lumi";
-      userEmail = "lumicake@pm.me";
+      userEmail = "kallioniemi@pm.me";
     };
   }; 
 
