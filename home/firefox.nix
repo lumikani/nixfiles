@@ -21,7 +21,14 @@
         id = 0;
         settings = {
           "browser.startup.page" = 3;
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         };
+        userChrome = ''
+            #TabsToolbar
+            {
+              visibility: collapse;
+            }
+          '';
       };
     };
   };
