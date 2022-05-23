@@ -92,6 +92,8 @@ in
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
 
+  environment.shells = with pkgs; [ bashInteractive zsh ];
+
   virtualisation = {
     docker.enable = true;
   };
