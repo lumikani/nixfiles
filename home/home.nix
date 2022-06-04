@@ -22,6 +22,16 @@
     dbeaver
     protonvpn-cli
     git-filter-repo
+
+    nodejs
+    nodePackages.npm
+    nodePackages.eslint_d
+    nodePackages.typescript
+    nodePackages.typescript-language-server
+    nodePackages.prettier
+    haskell-language-server
+    stylish-haskell
+    haskellPackages.hls-stylish-haskell-plugin
   ];
 
   home.file = {
