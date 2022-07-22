@@ -6,6 +6,7 @@
     wget   
     firefox
     btop
+    gdu
     networkmanagerapplet
     nix-prefetch-scripts
     which   
@@ -19,10 +20,11 @@
     spotify
     slack 
     neovim
-    anki  
     docker
     transmission
+    unzip
     ripgrep
+    arcanPackages.espeak
   ];
 }
 

@@ -22,6 +22,8 @@
     dbeaver
     protonvpn-cli
     git-filter-repo
+    transmission-gtk
+    anki-bin
 
     nodejs
     nodePackages.npm
