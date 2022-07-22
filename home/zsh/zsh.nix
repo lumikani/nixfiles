@@ -64,7 +64,8 @@ in
           bindkey "^?" backward-delete-char
 
           # does not work in session variables for some reason
-          export ZSH_HIGHLIGHT_STYLES[path]=none;
+          #export ZSH_HIGHLIGHT_STYLES[path]=none
+          # ^ broken: "bad math expression"
         '';
 
       sessionVariables = {
