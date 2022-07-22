@@ -23,6 +23,7 @@
     protonvpn-cli
     git-filter-repo
     transmission-gtk
+    synergy
     anki-bin
 
     nodejs

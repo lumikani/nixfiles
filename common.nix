@@ -17,6 +17,10 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
   
   networking.networkmanager.enable = true;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 24800 ];
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Helsinki";
