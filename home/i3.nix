@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 let
   mode_system = "(l)ock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown";
-  lock_system = "i3lock -c 000000 && sleep 1";
+  lock_system = "xflock4";
   i3status-bottom = "bottom";
   rofi-package = pkgs.rofi.override { plugins = [ pkgs.rofi-emoji ]; };
   rofi-menu = "${rofi-package}/bin/rofi -show";
