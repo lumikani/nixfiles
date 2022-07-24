@@ -6,6 +6,7 @@
     ./i3.nix
     ./firefox.nix
     ./nvim.nix
+    ./systemd.nix
   ];
 
   programs = {
