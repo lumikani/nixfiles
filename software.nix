@@ -16,7 +16,6 @@
     signal-desktop
     discord
     docker-compose
-    #tdesktop # broken for now
     spotify
     slack 
     neovim

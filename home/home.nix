@@ -24,6 +24,7 @@
     protonvpn-cli
     git-filter-repo
     transmission-gtk
+    tdesktop
     synergy
     anki-bin
 
