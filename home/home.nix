@@ -7,6 +7,7 @@
     ./firefox.nix
     ./nvim.nix
     ./systemd.nix
+    ./autorandr.nix
   ];
 
   programs = {
