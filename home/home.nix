@@ -28,6 +28,7 @@
     tdesktop
     synergy
     anki-bin
+    bluetuith
 
     nodejs
     nodePackages.npm
