@@ -30,11 +30,11 @@ in
       WantedBy = before-after-wanted;
     };
   in { 
-    protonvpn-disconnect = {
-      Unit = mkUnitSectionDisconnect "protonvpn-cli disconnect before sleep";
-      Service = mkServiceSection "d";
-      Install = installSection;
-    };
+    #protonvpn-disconnect = {
+    #  Unit = mkUnitSectionDisconnect "protonvpn-cli disconnect before sleep";
+    #  Service = mkServiceSection "d";
+    #  Install = installSection;
+    #};
 
     #protonvpn-reconnect = {
     #  Unit = mkUnitSectionReconnect "protonvpn-cli reconnect after sleep";
