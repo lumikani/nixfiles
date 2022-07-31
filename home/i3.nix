@@ -97,6 +97,7 @@ in
         "${modifier}+space" = "exec ${rofi-menu} run";
         "Ctrl+space" = "exec ${rofi-menu} window";
         "${modifier}+period" = "exec ${rofi-menu} emoji";
+        "${modifier}+Shift+f" = "exec '${pkgs.autorandr}/bin/autorandr -c'";
       };
 
       menu = "${rofi-menu} run";
