@@ -29,6 +29,7 @@
     synergy
     anki-bin
     bluetuith
+    calibre
 
     nodejs
     nodePackages.npm
