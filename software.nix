@@ -12,7 +12,6 @@
     which   
     progress
     jq 
-    mpv
     signal-desktop
     discord
     docker-compose
