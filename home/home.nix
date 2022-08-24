@@ -1,8 +1,9 @@
-{ config, pkgs, hostUse, ... }:
+{ config, pkgs, lib, hostUse, ... }:
 {
   imports = [
     ./zsh/zsh.nix
     ./alacritty.nix
+    ./chromium.nix
     ./i3.nix
     ./firefox.nix
     ./nvim.nix
@@ -24,7 +25,15 @@
         else
           "kallioniemi@pm.me";
     };
+
+    gpg = lib.mkIf (hostUse == "work") {
+      enable = true;
+    };
   }; 
+
+  services.gpg-agent = lib.mkIf (hostUse == "work") {
+    enable = true;
+  };
 
   home.packages = with pkgs; [
     tig
@@ -39,6 +48,7 @@
     bluetuith
     calibre
     watson
+    glow
 
     nodejs
     nodePackages.npm
@@ -49,6 +59,9 @@
     haskell-language-server
     stylish-haskell
     haskellPackages.hls-stylish-haskell-plugin
+  ] ++ lib.optionals (hostUse == "work") [
+    pinentry
+    gpg-tui
   ];
 
   home.file = {
