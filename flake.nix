@@ -12,14 +12,33 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, ... }: {
-    nixosConfigurations.muffin = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [ 
-        ./hosts/muffin/configuration.nix
-        { nixpkgs.overlays = [ nur.overlay ]; }
-        home-manager.nixosModules.home-manager
-      ];
+  outputs = { self, nixpkgs, home-manager, nur, ... }:
+  let
+    work = "work";
+    gaiety = "gaiety";
+  in {
+    nixosConfigurations = {
+      fl-lumi-xps = nixpkgs.lib.nixosSystem {
+        specialArgs = { hostUse = work; };
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/fl-lumi-xps/configuration.nix
+          { nixpkgs.overlays = [ nur.overlay ]; }
+          home-manager.nixosModules.home-manager
+          { home-manager.extraSpecialArgs = { hostUse = work; }; }
+        ];
+      };
+
+      muffin = nixpkgs.lib.nixosSystem {
+        specialArgs = { hostUse = gaiety; };
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/muffin/configuration.nix
+          { nixpkgs.overlays = [ nur.overlay ]; }
+          home-manager.nixosModules.home-manager
+          { home-manager.extraSpecialArgs = { hostUse = gaiety; }; }
+        ];
+      };
     };
   };
 }

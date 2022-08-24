@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, hostUse, ... }:
 {
   imports = [
     ./zsh/zsh.nix
@@ -13,8 +13,16 @@
   programs = {
     git = {
       enable = true;
-      userName = "Lumi";
-      userEmail = "kallioniemi@pm.me";
+      userName = if hostUse == "work"
+        then
+          "Lumi Kallioniemi"
+        else
+          "Lumi";
+      userEmail = if hostUse == "work"
+        then
+          "lumi.kallioniemi@futurice.com"
+        else
+          "kallioniemi@pm.me";
     };
   }; 
 
