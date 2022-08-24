@@ -7,6 +7,7 @@
     firefox
     btop
     gdu
+    meld
     networkmanagerapplet
     nix-prefetch-scripts
     which   

@@ -30,6 +30,7 @@
     anki-bin
     bluetuith
     calibre
+    watson
 
     nodejs
     nodePackages.npm
