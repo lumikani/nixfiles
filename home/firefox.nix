@@ -14,6 +14,7 @@
      sidebery
      vimium
      tokyo-night-v2
+     reddit-enhancement-suite
     ];
 
     profiles = {
