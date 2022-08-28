@@ -207,10 +207,34 @@ in
             -- Setup lspconfig.
             local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+            require('lspconfig').pylsp.setup{
+              capabilities = capabilities,
+              on_attach = on_attach,
+              settings = {
+                configurationSources = {'flake8'},
+                plugins = {
+                  pycodestyle = {
+                    enabled = false
+                  },
+                  mccabe = {
+                    enabled = false
+                  },
+                  pyflake = {
+                    enabled = false
+                  },
+                  flake8 = {
+                    enabled = true,
+                    config = '.flake8'
+                  }
+                }
+              }
+            }
+
             require('lspconfig')['tsserver'].setup {
               capabilities = capabilities,
               on_attach = on_attach
             }
+
             require('lspconfig')['hls'].setup {
               capabilities = capabilities,
               settings = {
