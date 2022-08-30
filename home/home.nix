@@ -41,6 +41,7 @@
     dbeaver
     protonvpn-cli
     git-filter-repo
+    i7z
     transmission-gtk
     tdesktop
     synergy
