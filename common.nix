@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, hostUse, ... }:
 let 
   login = "lumi";
 in
@@ -30,6 +30,10 @@ in
   console = {
     font = "Lat2-Terminus16";
     keyMap = "us";
+  };
+
+  programs.nix-ld = lib.mkIf (hostUse == "gaiety") {
+    enable = true;
   };
 
   # Configure X11, xfce and i3

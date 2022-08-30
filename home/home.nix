@@ -36,12 +36,14 @@
   };
 
   home.packages = with pkgs; [
+    fzf
     tig
     slack
     dbeaver
     protonvpn-cli
     git-filter-repo
     i7z
+    nix-index
     transmission-gtk
     tdesktop
     synergy
