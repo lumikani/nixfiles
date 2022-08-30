@@ -32,6 +32,9 @@
   };
 
   services.thermald.enable = lib.mkDefault true;
+  services.globalprotect = {
+    enable = true;
+  };
 
   networking.hostName = "fl-lumi-xps"; # Define your hostname.
   hardware.video.hidpi.enable = true;

@@ -63,6 +63,10 @@
   ] ++ lib.optionals (hostUse == "work") [
     pinentry
     gpg-tui
+
+    openconnect
+    globalprotect-openconnect
+    networkmanager-openconnect
   ];
 
   home.file = {
