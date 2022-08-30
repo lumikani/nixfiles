@@ -10,9 +10,13 @@
     nur = {
       url = "github:nix-community/NUR";
     };
+
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, ... }:
+  outputs = { self, nixpkgs, home-manager, nur, nixos-hardware, ... }:
   let
     work = "work";
     gaiety = "gaiety";
@@ -37,6 +41,18 @@
           { nixpkgs.overlays = [ nur.overlay ]; }
           home-manager.nixosModules.home-manager
           { home-manager.extraSpecialArgs = { hostUse = gaiety; }; }
+        ];
+      };
+
+      pancake = nixpkgs.lib.nixosSystem {
+        specialArgs = { hostUse = gaiety; };
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/pancake/configuration.nix
+          { nixpkgs.overlays = [ nur.overlay ]; }
+          home-manager.nixosModules.home-manager
+          { home-manager.extraSpecialArgs = { hostUse = gaiety; }; }
+          nixos-hardware.nixosModules.lenovo-thinkpad-t490
         ];
       };
     };
