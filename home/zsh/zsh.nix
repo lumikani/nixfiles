@@ -30,6 +30,7 @@ in
       enable = true;
 
       enableAutosuggestions = true;
+      enableCompletion = true;
       enableSyntaxHighlighting = true;
 
       dotDir = ".config/zsh"; 

@@ -101,6 +101,7 @@ in
   home-manager.useUserPackages = true;
 
   environment.shells = with pkgs; [ bashInteractive zsh ];
+  environment.pathsToLink = [ "/share/zsh" ];
 
   virtualisation = {
     docker.enable = true;
