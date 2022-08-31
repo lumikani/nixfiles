@@ -52,6 +52,7 @@
     calibre
     watson
     glow
+    gimp
 
     nodejs
     nodePackages.npm
