@@ -65,6 +65,7 @@
   ] ++ lib.optionals (hostUse == "work") [
     pinentry
     gpg-tui
+    kubectl
 
     openconnect
     globalprotect-openconnect
