@@ -66,6 +66,7 @@
     pinentry
     gpg-tui
     kubectl
+    awscli2
 
     openconnect
     globalprotect-openconnect
