@@ -45,6 +45,11 @@ in
 
     layout = "us";
     xkbVariant = "altgr-intl";
+
+    deviceSection = lib.mkIf (hostUse == "work") ''
+      Option "AccelMethod" "uxa"
+    '';
+
     desktopManager = {
       xterm.enable = false;
       xfce = {
