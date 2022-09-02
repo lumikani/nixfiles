@@ -20,6 +20,8 @@ in
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [ 24800 ];
+
+    trustedInterfaces = lib.mkIf (hostUse == "work" ) [ "docker0" ];
   };
 
   # Set your time zone.
