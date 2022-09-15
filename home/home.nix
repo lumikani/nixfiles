@@ -12,6 +12,10 @@
   ];
 
   programs = {
+    mpv = {
+      enable = true;
+    };
+
     git = {
       enable = true;
       userName = if hostUse == "work"
