@@ -110,9 +110,13 @@ in
     };
   };
 
+  home.file.".config/rofi/themes/theme.rasi" = {
+    source = ./rofi-theme.rasi;
+  };
+
   programs.rofi = {
     enable = true;
-    theme = "Arc-Dark";
+    theme = "~/.config/rofi/themes/theme.rasi";
 
     package = rofi-package;
 
