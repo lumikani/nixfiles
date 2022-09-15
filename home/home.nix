@@ -14,6 +14,13 @@
   programs = {
     git = {
       enable = true;
+
+      extraConfig = {
+        blame = {
+          date = "short";
+        };
+      };
+
       userName = if hostUse == "work"
         then
           "Lumi Kallioniemi"
