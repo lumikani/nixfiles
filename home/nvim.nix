@@ -38,6 +38,9 @@ in
         nnoremap <leader>se :NvimTreeFindFileToggle<CR>
         nnoremap <leader>r :NvimTreeRefresh<CR>
         nnoremap <leader>n :NvimTreeFindFile<CR>
+        command! RenameWindow silent !xdotool getwindowfocus set_window --name "nvim - $(basename $PWD)"
+
+        :RenameWindow
       '';
 
     plugins = with allPlugins; [
