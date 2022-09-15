@@ -60,6 +60,7 @@
     watson
     glow
     gimp
+    xdotool
 
     nodejs
     nodePackages.npm
