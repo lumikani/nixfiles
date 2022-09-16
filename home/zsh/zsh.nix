@@ -72,7 +72,7 @@ in
       sessionVariables = {
         EDITOR = "nvim";
         KEYTIMEOUT = "2";
-        FZF_DEFAULT_COMMAND = "rg --files --hidden";
+        FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git/'";
         ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=#595959";
       };
 

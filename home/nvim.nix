@@ -55,6 +55,14 @@ in
 
       # Plugins with custom config
       {
+        plugin = fzf-vim;
+        config = ''
+            nnoremap <C-p> :FZF<Cr>
+            nnoremap <C-g> :Rg<Cr>
+          '';
+      }
+
+      {
         plugin = vim-gitgutter;
         config =
           ''
