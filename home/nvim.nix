@@ -26,7 +26,16 @@ in
 
     extraConfig =
       ''
+        "No file clutter
+        set nobackup
+        set nowb
+        set noswapfile
+
         let mapleader = ' '
+
+        "Scroll before reaching end of page
+        set scrolloff=5
+        set encoding=utf-8
 
         set tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
         set number
