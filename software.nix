@@ -14,7 +14,7 @@
     progress
     jq 
     signal-desktop
-    discord
+    discord-ptb
     docker-compose
     spotify
     slack 
