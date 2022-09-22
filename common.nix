@@ -4,6 +4,7 @@ let
 in
 {
   nix = {
+    nixPath = [ "nixpkgs=${pkgs.path}" ];
     package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
