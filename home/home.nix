@@ -65,6 +65,7 @@
     glow
     gimp
     xdotool
+    hyfetch
 
     nodejs
     nodePackages.npm
@@ -79,6 +80,8 @@
     pinentry
     gpg-tui
     kubectl
+    eksctl
+    terraform
     awscli2
 
     openconnect
