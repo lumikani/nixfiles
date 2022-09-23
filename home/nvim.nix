@@ -53,7 +53,7 @@ in
       '';
 
     plugins = with allPlugins; [
-      vim-nix
+      #vim-nix
       vim-fugitive
       editorconfig-nvim
       plenary-nvim
@@ -182,6 +182,11 @@ in
               capabilities = capabilities,
               on_attach = on_attach
             })
+
+            lspconfig.rnix.setup({
+              capabilities = capabilities,
+              on_attach = on_attach
+            })
           '';
       }
       {
@@ -296,6 +301,11 @@ in
             }
 
             require('lspconfig')['bashls'].setup({
+              capabilities = capabilities,
+              on_attach = on_attach
+            })
+
+            require('lspconfig')['rnix'].setup({
               capabilities = capabilities,
               on_attach = on_attach
             })

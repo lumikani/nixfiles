@@ -85,6 +85,7 @@
     kubectl
     minikube
     shellcheck
+    rnix-lsp
   ] ++ lib.optionals (hostUse == "work") [
     pinentry
     gpg-tui
