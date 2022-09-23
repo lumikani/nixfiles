@@ -83,6 +83,7 @@
     kubectl
     eksctl
     terraform
+    kustomize
     awscli2
 
     openconnect
