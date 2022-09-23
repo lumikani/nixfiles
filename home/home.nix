@@ -66,6 +66,7 @@
     gimp
     xdotool
     hyfetch
+    libreoffice
 
     nodejs
     nodePackages.npm
