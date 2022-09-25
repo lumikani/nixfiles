@@ -77,10 +77,11 @@
     haskell-language-server
     stylish-haskell
     haskellPackages.hls-stylish-haskell-plugin
+
+    kubectl
   ] ++ lib.optionals (hostUse == "work") [
     pinentry
     gpg-tui
-    kubectl
     eksctl
     terraform
     kustomize
