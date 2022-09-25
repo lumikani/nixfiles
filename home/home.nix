@@ -79,6 +79,7 @@
     haskellPackages.hls-stylish-haskell-plugin
 
     kubectl
+    minikube
   ] ++ lib.optionals (hostUse == "work") [
     pinentry
     gpg-tui
