@@ -165,6 +165,18 @@ in
                 },
                 on_attach = on_attach
             })
+
+            lspconfig.yamlls.setup {
+              capabilities = capabilities,
+              settings = {
+                yaml = {
+                  schemas = {
+                    kubernetes = "*.yaml"
+                  },
+                },
+              },
+              on_attach = on_attach
+            }
           '';
       }
       {
@@ -261,6 +273,18 @@ in
               settings = {
                 haskell = {
                   formattingProvider = "stylish-haskell",
+                },
+              },
+              on_attach = on_attach
+            }
+
+            require('lspconfig')['yamlls'].setup {
+              capabilities = capabilities,
+              settings = {
+                yaml = {
+                  schemas = {
+                    kubernetes = "*.yaml"
+                  },
                 },
               },
               on_attach = on_attach

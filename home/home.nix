@@ -73,6 +73,7 @@
     nodePackages.eslint_d
     nodePackages.typescript
     nodePackages.typescript-language-server
+    nodePackages.yaml-language-server
     nodePackages.prettier
     haskell-language-server
     stylish-haskell
