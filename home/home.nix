@@ -69,6 +69,7 @@
     xdotool
     hyfetch
     libreoffice
+    warpd
 
     nodejs
     nodePackages.npm
