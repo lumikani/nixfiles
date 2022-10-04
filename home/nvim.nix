@@ -177,6 +177,11 @@ in
               },
               on_attach = on_attach
             }
+
+            lspconfig.bashls.setup({
+              capabilities = capabilities,
+              on_attach = on_attach
+            })
           '';
       }
       {
@@ -289,6 +294,11 @@ in
               },
               on_attach = on_attach
             }
+
+            require('lspconfig')['bashls'].setup({
+              capabilities = capabilities,
+              on_attach = on_attach
+            })
           '';
       }
       {

@@ -72,6 +72,7 @@
 
     nodejs
     nodePackages.npm
+    nodePackages.bash-language-server
     nodePackages.eslint_d
     nodePackages.typescript
     nodePackages.typescript-language-server
@@ -83,6 +84,7 @@
 
     kubectl
     minikube
+    shellcheck
   ] ++ lib.optionals (hostUse == "work") [
     pinentry
     gpg-tui
