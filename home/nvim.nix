@@ -2,7 +2,8 @@
 let
   customPlugins = {
     winresizer = pkgs.vimUtils.buildVimPlugin {
-      name = "winresizer";
+      pname = "winresizer";
+      version = "1";
       src = pkgs.fetchgit {
         url = "https://github.com/simeji/winresizer";
         rev = "9dc9899cedf84d78b93263b1fdb105b37c54c7b5";

@@ -1,28 +1,27 @@
 { config, pkgs, lib, hostUse, ... }:
-let 
+let
   login = "lumi";
 in
 {
   nix = {
     nixPath = [ "nixpkgs=${pkgs.path}" ];
-    package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
       keep-outputs = true
       keep-derivations = true
     '';
   };
-  
+
   # Use the systemd-boot EFI boot loader.  
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+
   networking.networkmanager.enable = true;
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [ 24800 ];
 
-    trustedInterfaces = lib.mkIf (hostUse == "work" ) [ "docker0" ];
+    trustedInterfaces = lib.mkIf (hostUse == "work") [ "docker0" ];
   };
 
   # Set your time zone.
@@ -79,17 +78,17 @@ in
   };
 
   # Enable sound.   
-  nixpkgs.config = {  
-    pulseaudio = true; 
+  nixpkgs.config = {
+    pulseaudio = true;
     allowUnfree = true;
   };
   sound.enable = true;
   hardware.pulseaudio.enable = true;
   hardware.bluetooth.enable = true;
-  
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."${login}" = {
-    createHome = true;  
+    createHome = true;
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "disk" "networkmanager" "docker" ];
     group = "users";
@@ -99,7 +98,9 @@ in
   };
 
   fonts.fonts = with pkgs; [
-    roboto liberation_ttf dejavu_fonts
+    roboto
+    liberation_ttf
+    dejavu_fonts
 
     (nerdfonts.override { fonts = [ "Iosevka" ]; })
   ];
