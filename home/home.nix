@@ -25,12 +25,14 @@
         };
       };
 
-      userName = if hostUse == "work"
+      userName =
+        if hostUse == "work"
         then
           "Lumi Kallioniemi"
         else
           "Lumi";
-      userEmail = if hostUse == "work"
+      userEmail =
+        if hostUse == "work"
         then
           "lumi.kallioniemi@futurice.com"
         else
@@ -40,7 +42,7 @@
     gpg = lib.mkIf (hostUse == "work") {
       enable = true;
     };
-  }; 
+  };
 
   services.gpg-agent = lib.mkIf (hostUse == "work") {
     enable = true;

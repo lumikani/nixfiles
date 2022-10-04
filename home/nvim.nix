@@ -66,9 +66,9 @@ in
       {
         plugin = fzf-vim;
         config = ''
-            nnoremap <C-p> :FZF<Cr>
-            nnoremap <C-g> :Rg<Cr>
-          '';
+          nnoremap <C-p> :FZF<Cr>
+          nnoremap <C-g> :Rg<Cr>
+        '';
       }
 
       {
@@ -97,8 +97,8 @@ in
         plugin = tokyonight-nvim;
         config =
           ''
-          let g:tokyonight_style = "night"
-          colorscheme tokyonight
+            let g:tokyonight_style = "night"
+            colorscheme tokyonight
           '';
       }
       {
