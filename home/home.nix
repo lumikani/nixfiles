@@ -128,6 +128,10 @@
       set main-view = author:yes date:no id:yes commit-title:yes
       bind generic 9 @sh -c "printf '%s' %(commit) | xclip -selection c"
     '';
+
+    ".ghci".text = ''
+      :set prompt "λ> "
+    '';
   };
 
   home.stateVersion = "21.11";
