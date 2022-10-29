@@ -21,6 +21,13 @@
     };
   };
 
+  hardware.opengl = {
+    driSupport = true;
+    driSupport32Bit = true;
+
+    enable = true;
+  };
+
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "lumi" ];
 
