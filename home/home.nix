@@ -1,4 +1,9 @@
 { config, pkgs, lib, hostUse, ... }:
+let
+  winePackage = pkgs.wineWowPackages.full.override {
+    mingwSupport = true;
+  };
+in
 {
   imports = [
     ./zsh/zsh.nix
@@ -98,6 +103,10 @@
     openconnect
     globalprotect-openconnect
     networkmanager-openconnect
+  ] ++ lib.optionals (hostUse == "gaiety") [
+    winePackage
+    pkgs.winetricks
+    pkgs.dxvk.out
   ];
 
   home.file = {
