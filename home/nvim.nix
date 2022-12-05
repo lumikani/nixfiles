@@ -54,7 +54,7 @@ in
       '';
 
     plugins = with allPlugins; [
-      #vim-nix
+      vim-nix
       vim-fugitive
       editorconfig-nvim
       plenary-nvim
