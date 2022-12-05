@@ -44,8 +44,6 @@ in
           "kallioniemi@pm.me";
     };
 
-    ssh.askPassword = "";
-
     gpg = lib.mkIf (hostUse == "work") {
       enable = true;
     };
