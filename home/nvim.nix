@@ -185,6 +185,11 @@ in
             })
 
             lspconfig.rnix.setup({
+              --capabilities = capabilities,
+              --on_attach = on_attach
+            })
+
+            lspconfig.rust_analyzer.setup({
               capabilities = capabilities,
               on_attach = on_attach
             })
@@ -307,6 +312,11 @@ in
             })
 
             require('lspconfig')['rnix'].setup({
+              capabilities = capabilities,
+              on_attach = on_attach
+            })
+
+            require('lspconfig')['rust_analyzer'].setup({
               capabilities = capabilities,
               on_attach = on_attach
             })
